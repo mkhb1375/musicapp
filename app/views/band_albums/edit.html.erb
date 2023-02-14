@@ -1,0 +1,27 @@
+<div class="pages">
+
+    <div class="band_index">
+
+    <div class="links">
+        <a href="<%= bands_url %>">Bands</a>
+        / 
+        <a href="<%= band_url(@band.id) %>"><%=@band.name%></a>
+        / 
+        <a href="<%= band_album_url(@albums.id) %>"><%=@albums.title%></a>
+        <br>
+        </div>
+        <h4> Edit <%= @albums.title %> </h4>
+            
+
+            <div class="band_forms">
+
+
+                <%=  render "form" , action: band_album_url , method: :patch , bands: @bands  , album: @album %> 
+
+            
+            </div>
+     
+
+     </div>
+
+</div>

@@ -1,0 +1,32 @@
+
+ <style>
+  .new_user_body{
+  background-image:url("<%= asset_path('Login.png') %>");
+}
+  </style>
+<%= stylesheet_link_tag "/app/stylesheets/new_user.css" %>
+
+
+<span class= "new_user_body">
+
+<span class="singup_part">
+<%= render "shared/form" , action: users_url , comment: "Singup" ,
+ name_temp: "[user]" ,myInput: "input1" , myFunction:"function1", name:true %>
+</span>
+
+
+
+
+
+
+<span class="login_part">
+
+
+
+<%= render "shared/form" , action: session_url , comment: "Login",
+ name_temp: "[session]" ,myInput: "input2" , myFunction:"function2" ,name:false  %>
+
+
+</span>
+</span>
+

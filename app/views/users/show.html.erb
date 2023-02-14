@@ -1,0 +1,17 @@
+
+
+<span class= "prof_user_body">
+
+        <span class ="prof_part">
+
+                <h1 class="edit_part"><%= @user.name.upcase %></h1>
+                
+                <%= image_tag url_for(@user.image) ,:class=>"prof"   %>
+             
+                <h2 class="edit_part">Tracks : <%= @user.songs %> </h2>
+
+                <h2 class="edit_part">from : <%= @user.created_at.to_date %> </h2>
+        </span>
+        
+
+</span>

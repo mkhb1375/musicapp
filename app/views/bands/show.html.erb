@@ -1,0 +1,79 @@
+
+<style>
+
+
+
+
+.back_after:before{
+  
+  background-size:content;
+  background-repeat: no-repeat;
+}
+</style>
+
+<% if @cover%>
+<% temp =  @height%>
+<% temp = 500 / temp%>
+
+<style>
+
+.back_after:before{
+
+ background-image:url("<%= @cover %>");
+
+  filter: blur(<%= temp %>px);
+  -webkit-filter: blur(<%= temp %>px);
+}
+.pages:before{
+    background-size:cover;
+   background-repeat: no-repeat;
+     filter: blur(9px);
+  -webkit-filter: blur(9px);
+  background-image:url("<%= @cover %>");
+}
+
+</style>
+<% end %>
+
+<%= stylesheet_link_tag "/app/stylesheets/page.css" %>
+<div class="pages">
+<div class="back_after">
+<div class="band_index">
+<div class="links">
+<a href="<%= bands_url %>">Bands</a>
+/ 
+<a href="<%= band_url(@band.id) %>"><%=@band.name%></a>
+<br>
+</div>
+  
+    <ul class="band_index" >
+    <% @albums.each do |ele| %>
+    <%temp=""%>
+    <%temp= "(Single)" if ele.album_type == "Live"%>
+    <li class="band_index" > <a href="<%=band_album_url(ele.id)%>"> <%= ele.year%> - <%= ele.title%><%=temp%></a></li>
+    
+    <br>
+    <% end%>
+    </ul>
+    <br>
+
+ 
+
+</div>
+
+  <% if band_view   %>
+  <div class="buttons">
+
+      <a class="band_index"  href="<%= new_band_band_album_url(@band) %>"> Add Album</a>
+      <br>
+
+ 
+
+
+    <a class="band_index" href="<%= edit_band_url %>">Edit band </a>
+    <br>
+     <a class="band_index" href="<%= band_confirm_url(@band) %>">Delete Band </a>
+   </div>
+   <% end%>
+ </div>
+</div>

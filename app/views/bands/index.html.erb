@@ -1,0 +1,93 @@
+<%= stylesheet_link_tag "/app/stylesheets/band_index.css" %>
+<div class="pages">
+
+
+<div class="search">
+<form class="search" action="<%= search_bands_url %>" method="post" >
+<%= authenticity_token %>
+<div class="result"> Search Anything</div>
+<br>
+<input class="search" type="text" name="[band]word" >
+<button  class="search" type="submit"  >Find</button>
+</form>
+
+    
+<% if @search %>
+
+    <% count = 0 %>
+    <% @search.each do |group| %>
+    <div class="result">
+        <% if count ==0 && group.count != 0 %> 
+            <%=  "Bands:"  %>
+            <br>
+        <% end%>
+           <% if count ==1 && group.count != 0  %> 
+            <%=  "Albums:"  %>
+            <br>
+        <% end%>
+            
+            <% if count ==2 && group.count != 0 %> 
+            <%=  "Tracks:"  %>
+            <br>
+        <% end%>
+             </div> 
+            <% group.each do |ele| %>
+                <% path = band_url(ele[1]) if count == 0 %> 
+                <% path = band_album_url(ele[1]) if count == 1 %> 
+                <% path = track_url(ele[1]) if count == 2 %> 
+                <a class="search"  href="<%= path %>" > <%=ele[0]%> </a>
+                <br>
+            <% end %>
+    <br>
+        <% count = count +1%>
+      
+    <% end %>
+
+
+<% end %>
+    
+</div>
+
+<div class="band_index">
+<div class = buttons_index>
+<a class="band_index" href="<%= new_band_url %>"> Add Band </a>
+</div>
+ <div class="indx_cover">
+
+
+
+<% @users.each do |user| %>
+<% if user.bands.count != 0%>
+<span class="indx_all">
+       
+    
+    <span class="prof_indx">
+      <div class="prof_name" >  <a href="<%= user_url(user) %>" >  <%= user.name.upcase %> </a> </div>
+
+      <a href="<%= user_url(user) %>" >
+      
+   <%= image_tag url_for(user.image) ,:class=>"indx_img" %>
+   </a>
+    </span>
+    <ul class="index_index" >
+
+        <% user.bands.each do |band| %>
+
+            <li class="indx_index" ><a href="<%=band_url(band.id)%>">  <%= band.name %></a> </li>
+
+        <% end %>
+        </ul>
+    <br>
+    
+<% end %>
+</span>
+   <% end%> 
+
+</div>
+
+</div>
+
+
+
+
+</div>

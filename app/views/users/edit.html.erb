@@ -1,0 +1,93 @@
+  <script>
+function function3() {
+  var x = document.getElementById("cur_password");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+
+function function4() {
+  var x = document.getElementById("new_password");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+
+
+</script>
+ 
+ 
+ 
+ <style>
+  .prof_edit_body{
+  background-image:url("<%= asset_path('Login.png') %>");
+}
+  </style>
+  
+
+
+
+
+
+<span class= "prof_edit_body">
+
+
+   
+ 
+
+
+  
+
+<div class="center">
+
+<%= image_tag url_for(@user.image) ,:class=>"prof"  %>
+<br>
+<a class="delete_bottom" href="<%= edit_user_link_url(@user) %>">Delete User </a> 
+
+</div>
+
+<span class="prof_edit_part">
+
+<%= form_for @user, html: { multipart: true } do |f| %>
+      
+      <%= f.label :image %><br>
+      <%= f.file_field :image, accept: 'image/png,image/jpeg' %><br>
+      
+      
+     
+      <%= f.submit "Save", class: "btn btn-primary" %>
+   <% end %>
+<br>
+   <%= form_for @user, html: { multipart: true } do |f| %>
+      
+      
+      <%= f.label :name %><br>
+      <%= f.text_field :name %><br>
+    
+     
+      <%= f.submit "Save", class: "btn btn-primary" %>
+   <% end %>
+<br>
+   <%= form_for @user, html: { multipart: true } do |f| %><br>
+     Current Password<br>
+        <input type="password" name="[user]cur_password" id="cur_password"><br>
+        <input type="checkbox" onclick="function3()"><h6>Show Password </h6><br><br>
+
+
+      New Password <br>
+        <input type="password" name="[user]password" id="new_password"><br>
+        <input type="checkbox" onclick="function4()"><h6>Show Password </h6><br><br>
+      
+     
+      <%= f.submit "Save", class: "btn btn-primary" %>
+   <% end %>
+<br>
+
+   <br>
+
+</span>
+</span>

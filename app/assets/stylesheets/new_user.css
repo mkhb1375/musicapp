@@ -1,0 +1,77 @@
+.new_user_body{
+   
+    margin: 0 auto;
+    display: flex;
+    font-size: 150%;
+    flex-wrap: wrap;
+    width: 98%;
+    padding-bottom: 5%;
+    justify-content:space-around;
+    max-width: 1270px;
+    text-align: center;
+    font-size: 190%;
+    
+  }
+
+ 
+  .singup_part , .login_part{
+   
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.459);
+    padding-bottom: 8%;
+    padding-top: 10%;
+   
+    
+  }
+
+
+  .edit_part{
+    background-color: rgba(0, 0, 0, 0.298);
+    margin-top: 50px;
+  }
+
+  .new_user_form {
+    
+    font-size: 100%;
+  }
+
+  label.user_user_form{
+    color:white;
+  }
+
+  button.new_user_form ,input{
+  
+    background-color: rgb(180, 180, 180);
+  }
+  
+  
+  .checkbox{
+
+    text-align: center;
+    color: inherit;
+  } 
+
+  h1.new_h1{
+    background-color: rgba(0, 0, 0, 0.455);
+    text-align: center;
+    color: inherit;
+    font-weight: 400;
+    font-size: 190%;
+  }
+
+  @media only screen and (max-width:600px) {
+
+    .new_user_body {
+        font-size: 120%;
+    }
+        
+  }
+
+
+  .delete_bottom{
+    background-color:rgba(94, 0, 0, 0.883);
+    
+    font-size: 150%;
+    border: rgb(84, 0, 0) 2px solid;
+    padding: 10px;
+  }

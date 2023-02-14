@@ -1,0 +1,15 @@
+
+<div style=" background-color:gray; height:700px">
+""
+<p style="color:white; display:block;  text-align:center; margin:auto 0; margin-top:50px; font-size:200%">Hello <%=@user.name.upcase%> Welcome to MusicApp click on link below to start your journey</p>
+
+ <a style="color:white;display:block;  text-align: center; margin:auto 0 ; margin-top:100px; font-size:400%" href="<%= activate_users_url %>?[user]activation_token=<%= @token %>&[user]activation_id=<%=@user.id%>">Activate Account</a>
+ 
+
+
+
+
+
+
+</div>
+

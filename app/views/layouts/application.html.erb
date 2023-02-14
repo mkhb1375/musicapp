@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  <style>
+  body{
+    background-color: black;
+  background-image:url("<%= asset_path('123.jpg') %>");
+}
+.pages:before{
+  background-image:url("<%= asset_path('music_back1.png') %>");
+}
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <title>MusicApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+     <%= stylesheet_link_tag "/app/stylesheets/main.css" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+
+  <header class="header_style" >
+
+
+  <span class="hide">
+  
+  a
+  
+  </span>
+
+  <span class="header_logo">
+  
+  <a href="/">Music App</a>
+  
+  </span>
+
+  
+  
+  <% if any_user?%>
+
+  <% button_temp = "Logout"  %>
+  <% action_temp = session_url %>
+  <% method_temp = "delete" %>
+
+  <% else%>
+
+  <% button_temp = "Sing up/Login" %>
+  <% action_temp = new_user_url %>
+  <% method_temp = "get" %>
+
+  <% end %>
+  
+  
+    <span class="header_login">
+    
+<% if any_user?%>
+
+
+ <a href="<%= edit_user_url(current_user) %>" > <%=current_user.email%>  </a> 
+
+<% end%>
+
+
+ <%= button_to(button_temp, action_temp, class:"header_login" ,
+          method: method_temp ,) %> 
+          
+  
+</span>
+
+
+
+</header>
+
+<span class= "holder">
+<h1 class="errors">
+
+<% if flash[:notice]%>
+
+  <% flash[:notice].each do |ele| %>
+
+    <%= p ele %>
+ <br>
+  <% end%>
+ 
+<% end%>
+
+</h1>
+
+</span>
+    <%= yield %>
+
+
+    <footer>
+
+
+    <div class="footer_content">
+    
+      Developed by: MKHB75
+      <br>
+      All right reserved
+    
+    </div>
+    
+
+    </footer>
+
+
+  </body>
+  
+</html>

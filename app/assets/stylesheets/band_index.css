@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css?family=Black Ops One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Fjalla One&display=swap');
+
+.users{
+  
+    text-align: center;
+    display: inline;
+    font-size: 250%;
+    
+  }
+  .thing{
+   
+    font-size: 150%;
+    margin-left: 45%;
+    text-align: left;
+    display: inline;
+  
+  }
+  
+  .search{
+    text-align: center;
+    margin-top: 20px;
+    padding-right: 1%;
+    padding-left: 1%;
+    border-right: white 4px solid;
+    position: relative;
+    font-size: 130%;
+     
+  }
+ 
+  .result{
+    
+    
+    margin-left: 1%;
+    color: white;
+    font-size: 150%;
+  }
+  button.search , input.search ,form.search , a.search{
+    margin-top: 10px;
+     border-right: none;
+     border-bottom:none;
+  
+  }
+  button.search{
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  .indx_cover{
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .prof_indx{
+
+    display: block;
+    margin: auto;
+    width: min-content;
+    display: flex;
+       
+   }
+      .indx_img{
+          
+          border: white 2px solid;
+          height: min-content;
+          border-radius:50%;
+          width: 10vw;
+          height: 10vw;
+         
+      }
+
+      .prof_name{
+          font-size: 400%;
+          align-self: center;
+          margin-right: 10px;
+                }
+
+      .indx_all{
+
+        display: block;
+        
+        width: fit-content;
+        position: relative;
+        padding: 0.5%;
+        border: 2px solid rgb(203, 203, 203);
+        background-color: rgba(0, 0, 0, 0.467);
+        margin: 1%;
+      }
+
+        .indx_index{
+          border: orange 1px solid;
+          /* width: max-content; */
+          padding: 1%;
+          margin: 1%;
+          background-color: rgba(0, 0, 0, 0.609);
+          border-radius: 5px;
+          
+        }
+
+        ul.index_index{
+          min-width: 300px;
+          margin: 0 auto;
+          margin-top: 30px;
+          margin-bottom: 30px;
+          padding: 1%;
+          padding-bottom: 0%;
+          padding-top: 0;
+          font-size: 250%;
+          /* width: 80%; */
+          display: flex;
+          flex-wrap: wrap;
+          align-items: baseline;
+          justify-content: center;
+          text-align: center;
+          color: yellow;
+        }
+
+  @media only screen and (max-width: 600px){
+    .indx_all{
+      max-width: 330px;
+    }
+    .indx_img{
+      width: 125px;
+      height: 125px;
+    }
+
+    .prof_name{
+      font-size: 200%;
+    }
+    ul.index_index{
+      font-size: 100%;
+    }
+    .users{
+  
+      font-size: 150%;
+    }
+    h4{
+      font-size: 130%;
+    }
+  
+    .thing{
+      font-size: 90%;
+      margin-left: 28%;
+  
+    }
+
+    .search{
+  
+        font-size: 20px;
+        border-right: none;
+        border-bottom: 4px solid white;
+      }
+  
+  }
+

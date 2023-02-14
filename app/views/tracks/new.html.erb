@@ -1,0 +1,25 @@
+<div class="pages">
+
+    <div class="band_index">
+
+
+        <div class="links">
+            <a href="<%= bands_url %>">Bands</a>
+            /
+            <a href="<%= band_url(@band.id) %>"><%=@band.name%></a>
+            /
+            <a href="<%= band_album_url(@album.id) %>"><%=@album.title%></a>
+            <br>
+            </div>
+            <h4> Add Track to <%= @album.title %> </h4>
+
+    <div class="band_forms">
+
+            <%=  render "form" , action: tracks_url , method: :post , albums: @albums ,  track: @track %>
+
+
+    </div>
+
+    </div>
+
+</div>

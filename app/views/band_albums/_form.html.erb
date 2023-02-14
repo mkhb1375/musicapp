@@ -1,0 +1,28 @@
+
+
+   <%= form_for album, html: { multipart: true } do |f| %>
+      
+      
+      <%= f.label :title %><br>
+      <%= f.text_field :title %><br>
+
+      <%= f.label :year %><br>
+      <%= f.text_field :year %><br>
+
+     <% temp2 = "checked" if album.album_type == "Live"%>
+     <% temp3 = "checked" if album.album_type == "Studio"%>
+
+        <label for="studio">Album</label>
+        <input class="band_form"  type="radio" name="[band_album]album_type" id="studio" value="Studio" <%= temp3 %>>
+
+
+        <label for="live" id="album_type">Single </label>
+        <input class="band_form"  type="radio" name="[band_album]album_type" id="live" value="Live" <%= temp2 %>>
+
+            <br>
+    
+        <%= f.label :cover %><br>
+      <%= f.file_field :cover, accept: accept='image/png,image/jpeg' %><br>
+
+      <%= f.submit "Save", class: "btn btn-primary" %>
+   <% end %>

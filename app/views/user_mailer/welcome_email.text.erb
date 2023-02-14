@@ -1,0 +1,6 @@
+
+
+
+Hello <%=@user.name.upcase%>
+
+<%= activate_users_url %>?[user]activation_token=<%= @token %>&[user]activation_id=<%=@user.id%>

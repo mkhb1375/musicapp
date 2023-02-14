@@ -1,0 +1,41 @@
+<script>
+function <%= myFunction %>() {
+  var x = document.getElementById("<%= myInput %>");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+</script>
+ 
+
+<h1 class="new_h1"><%= comment %></h1>
+
+<form action="<%= action %>" , method="post" , class="new_user_form" >
+
+    <% authenticity_token %>
+    <%if name %>
+    <label for="name">Name</label>
+    <br>
+    <input type="text" name="<%=name_temp%>name" id="name">
+    <% end%>
+    <br>
+    <label for="email">Emial</label>
+    <br>
+    <input type="text" name="<%=name_temp%>email" id="email">
+    <br>
+   
+   Password:
+   <br>
+    <input type="password"  id="<%= myInput %>" name="<%=name_temp%>password">
+    <br>
+    <span class="checkbox">
+    <input type="checkbox" class="new_user_form"  onclick="<%= myFunction %>()">Show Password
+    </span>
+    <br>   <br> 
+    <button type="submit" class="new_user_form"  >Enter</button  >
+    
+      
+
+</form>

@@ -1,0 +1,29 @@
+<div class="pages">
+
+<div class="band_index">
+<br><br><br><br>
+ <h4 ><%= @message %> <%=@name%></h4>
+    <ul class="confirm_index">
+
+
+    
+
+    <%= button_to("Yes", @url, class:"confirm_index", 
+          method: "delete") %> 
+
+                <br><br>
+
+           <%= button_to("No", @url , class:"confirm_index", 
+          method: "get") %> 
+            
+
+    </ul>
+
+
+</div>
+
+
+
+</div>
+
+
